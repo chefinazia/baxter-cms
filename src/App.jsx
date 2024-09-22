@@ -1,11 +1,12 @@
-import React from "react"
-
+import React from "react";
+import LoginButton from "./LoginButton";
 
 const App = () => {
-    return (<div className="flex">
-       <h3 className="">Hello From React</h3>
-        <p className="text-center w-[2000px]">This is a simple React App</p>
-    </div>)
- }
+  return (
+    <div className="flex justify-center">
+      <LoginButton />
+    </div>
+  );
+};
 
-export default App
+export default App;
