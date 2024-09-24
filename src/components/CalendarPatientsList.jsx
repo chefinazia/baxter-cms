@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { addDays, subDays } from "date-fns";
 import CalendarTablePatientsList from "./CalendarTablePatientList";
 const CalendarPatientsList = () => {
-  const [ourDate, setOurDate] = useState(new Date().toString());
+  const [ourDate, setOurDate] = useState(new Date().toLocaleDateString());
 
   const handleSubtractDate = () => {
     setOurDate(subDays(ourDate, 7).toDateString());
@@ -13,7 +13,7 @@ const CalendarPatientsList = () => {
 
   return (
     <div className="grid">
-      <div className="flex">
+      <div className="col-span-2 flex">
         <div
           className="flex flex-initial align-middle justify-center none border w-auto border-zinc-800 center rounded-lg font-serif text-md text-center uppercase text-zinc-700 py-3"
           data-ripple-dark="true"
@@ -50,7 +50,7 @@ const CalendarPatientsList = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-initial">
+      <div className="flex flex-initial row-span-2 pt-8 justify-center w-full pr-14">
         <CalendarTablePatientsList leftDate={subDays(ourDate, 4)} />
       </div>
     </div>
