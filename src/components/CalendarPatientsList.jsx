@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { addDays, subDays } from "date-fns";
+import CalendarTablePatientsList from "./CalendarTablePatientList";
 const CalendarPatientsList = () => {
   const [ourDate, setOurDate] = useState(new Date().toString());
 
-
   const handleSubtractDate = () => {
-    setOurDate(subDays(ourDate,7).toDateString())
+    setOurDate(subDays(ourDate, 7).toDateString());
   };
   const handleAddDate = () => {
-    setOurDate(addDays(ourDate,7).toDateString())
+    setOurDate(addDays(ourDate, 7).toDateString());
   };
 
   return (
-    <>
+    <div className="grid">
+      <div className="flex">
         <div
-          className="flex align-middle justify-center none border w-auto border-zinc-800 center rounded-lg font-serif text-md text-center uppercase text-zinc-700 py-3"
+          className="flex flex-initial align-middle justify-center none border w-auto border-zinc-800 center rounded-lg font-serif text-md text-center uppercase text-zinc-700 py-3"
           data-ripple-dark="true"
         >
           <div className="flex-initial">
@@ -30,7 +31,10 @@ const CalendarPatientsList = () => {
             </a>
           </div>
           <div className="flex-auto">
-          <h1>{subDays(ourDate,4).toDateString()} - {addDays(ourDate,2).toDateString()}</h1>
+            <h1>
+              {subDays(ourDate, 4).toDateString()} -{" "}
+              {addDays(ourDate, 2).toDateString()}
+            </h1>
           </div>
           <div className="flex-initial">
             <a onClick={() => handleAddDate()}>
@@ -45,7 +49,11 @@ const CalendarPatientsList = () => {
             </a>
           </div>
         </div>
-    </>
+      </div>
+      <div className="flex flex-initial">
+        <CalendarTablePatientsList leftDate={subDays(ourDate, 4)} />
+      </div>
+    </div>
   );
 };
 
