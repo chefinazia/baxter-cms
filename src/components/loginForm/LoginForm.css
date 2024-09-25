@@ -1,0 +1,90 @@
+/* General Page Styles */
+
+
+.login-container {
+    display: block;
+    margin: 50px auto; /* Center form horizontally with some top space */
+    width: 100%; /* Adjust width to fit both inputs side by side */
+    padding: 0 20px;
+    background-color: #fdfbfb;
+}
+
+.wrapper {
+    display: flex;
+    /* justify-content: space-between; */
+    background-color: #fdfbfb;
+    padding: 40px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+    /* box-sizing: border-box; */
+}
+
+.form-group {
+   
+}
+
+label {
+    font-size: 12px;
+    color: #333;
+    margin-right: 20px; /* Add space between label and input */
+    width: 150px; /* Adjust width of the label to align properly */
+}
+
+input[type="email"],
+input[type="password"] {
+    flex-grow: 1; /* Input field takes the remaining space */
+    padding: 5px 2px;
+    border: 1px solid #ccc;
+    height: 35px;
+    /* border-radius: 5px; */
+    /* margin: 5%; */
+    font-size: 10px;
+    box-sizing: border-box;
+    width: 165px;
+}
+
+button[type="submit"] {
+    width: 20%;
+    height: 20%;
+    margin-top: 24px;
+    background-color: #4CAF50;
+    color: white;
+    /* margin-left: 5%; */
+    padding: 9px 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    /* width: 40%; */
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.forgot-password {
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+    font-size: 11px;
+    position: relative;
+    bottom: 17px;
+}
+
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column; /* Stack inputs on smaller screens */
+        align-items: flex-start;
+    }
+
+    label {
+        width: auto;
+        margin-bottom: 5px; /* Add space between label and input */
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        width: 100%; /* Full width on small screens */
+    }
+}
