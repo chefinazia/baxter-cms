@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login-container {
+  margin-top: 3.125rem; 
+}
+
+.forgot-password {
+  position: relative;
+  bottom: 1.0625rem; 
+}
