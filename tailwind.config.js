@@ -2,8 +2,20 @@
 module.exports = {
   content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          primaryTabColor: "#295da7",
+          pageColor: "#ffffff",
+          borderColor: "#bfcfdd",
+          secondaryTabColor: "#e0eaf2",
+          secondaryTabColorBorderColor: "#d6dde1",
+          textColor: "#2d3435",
+          primaryBgColor: "#feffff",
+          carotRightColor: "#9fa6a6",
+        },
+      },
+    },
   },
   plugins: [],
-}
-
+};

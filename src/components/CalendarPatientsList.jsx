@@ -13,44 +13,41 @@ const CalendarPatientsList = () => {
 
   return (
     <div className="grid">
-      <div className="col-span-2 flex">
-        <div
-          className="flex flex-initial align-middle justify-center none border w-auto border-zinc-800 center rounded-lg font-serif text-md text-center uppercase text-zinc-700 py-3"
-          data-ripple-dark="true"
+        <button
+          className="flex divide-x-3 m-auto max-w-fit px-4 justify-center align-middle bg-primary-secondaryTabColor none border border-primary-secondaryTabColorBorderColor center rounded-md font-serif text-md text-center uppercase text-primary-textColor py-3"
         >
-          <div className="flex-initial">
+          <div className="grid-rows-2 gap-4">
             <a onClick={() => handleSubtractDate()}>
               <svg
-                className="w-6 h-6 mr-2"
+                className="w-8 h-8 mr-2"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M14 17l-6-5 6-5v10z" fill="#0D0D0D" />
+                <path d="M14 17l-6-5 6-5v10z" fill="#9fa6a6" />
               </svg>
             </a>
           </div>
-          <div className="flex-auto">
-            <h1>
+          <div className="">
+            <h1 className="text-primary-textColor">
               {subDays(ourDate, 4).toDateString()} -{" "}
               {addDays(ourDate, 2).toDateString()}
             </h1>
           </div>
-          <div className="flex-initial">
+          <div className="">
             <a onClick={() => handleAddDate()}>
               <svg
-                className="w-6 h-6 ml-2"
+                className="w-8 h-8 ml-2"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M10 7l6 5-6 5V7z" fill="#0D0D0D" />
+                <path d="M10 7l6 5-6 5V7z" fill="#9fa6a6" />
               </svg>
             </a>
           </div>
-        </div>
-      </div>
-      <div className="flex flex-initial row-span-2 pt-8 justify-center w-full pr-14">
+        </button>
+      <div className="divide-x-8 pt-8 justify-center w-full">
         <CalendarTablePatientsList leftDate={subDays(ourDate, 4)} />
       </div>
     </div>
