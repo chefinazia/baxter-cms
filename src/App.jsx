@@ -18,7 +18,6 @@
 
 // export default App;
 
-
 import React, { useState } from "react";
 import LoginButton from "./components/LoginButton";
 import CalendarPatientsList from "./components/CalendarPatientsList";
@@ -33,16 +32,14 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="flex flex-col items-center">
-        <div className="flex justify-between items-center w-full max-w-md mb-8">
-          {/* Pass the handleLoginClick function to the LoginButton component */}
-          <LoginButton onClick={handleLoginClick} />
-          <CalendarPatientsList />
-        </div>
-        {/* Conditionally render the LoginForm only if showLoginForm is true */}
-        {showLoginForm && <LoginForm />}
+    <div className="grid grid-rows-3 grid-flow-col gap-4">
+      <div className="row-span-3">
+        <LoginButton onClick={handleLoginClick} />
       </div>
+      <div className="col-span-2">
+        <CalendarPatientsList />
+      </div>
+      {showLoginForm && <LoginForm />}
     </div>
   );
 };
