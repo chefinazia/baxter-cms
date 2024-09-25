@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .login-container {
-  margin-top: 3.125rem; /* 50px / 16 = 3.125rem */
+  margin-top: 3.125rem; 
 }
 
 .forgot-password {
   position: relative;
-  bottom: 1.0625rem; /* 17px / 16 = 1.0625rem */
+  bottom: 1.0625rem; 
 }
