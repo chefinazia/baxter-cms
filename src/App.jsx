@@ -4,10 +4,10 @@ import CalendarPatientsList from "./components/CalendarPatientsList";
 const App = () => {
   return (
     <div className="divide-y-4">
-      <div className="">
+      <div>
         <LoginButton />
       </div>
-      <div className="">
+      <div>
         <CalendarPatientsList />
       </div>
     </div>

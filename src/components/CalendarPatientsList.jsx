@@ -3,6 +3,7 @@ import { addDays, subDays } from "date-fns";
 import CalendarTablePatientsList from "./CalendarTablePatientList";
 import CaretLeft from "../svg/caret-left.svg?react";
 import CaretRight from "../svg/caret-right.svg?react";
+import { Link } from "react-router-dom";
 const CalendarPatientsList = () => {
   const [ourDate, setOurDate] = useState(new Date().toLocaleDateString());
 
@@ -19,9 +20,9 @@ const CalendarPatientsList = () => {
           className="grid grid-cols-4 gap-4 grid-flow-dense items-center justify-start w-[600px] h-[100px] m-auto text-nowrap  bg-primary-secondaryTabColor border border-primary-secondaryTabColorBorderColor rounded-md font-serif text-sm uppercase text-primary-textColor"
         >
           <div className="w-8 h-8 ml-2">
-            <a onClick={() => handleSubtractDate()}>
+            <Link onClick={() => handleSubtractDate()}>
               <CaretLeft/>
-            </a>
+            </Link>
           </div>
           <div>
             <h1 className="text-primary-textColor">
@@ -30,9 +31,9 @@ const CalendarPatientsList = () => {
             </h1>
           </div>
           <div className="w-8 h-8 absolute right-96">
-            <a onClick={() => handleAddDate()}>
+            <Link onClick={() => handleAddDate()}>
               <CaretRight/>
-            </a>
+            </Link>
           </div>
         </div>
       <div className="divide-x-8 pt-8 justify-center w-full">
