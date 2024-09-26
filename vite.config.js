@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import federation from '@originjs/vite-plugin-federation'
-
+import svgr from "vite-plugin-svgr";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -11,7 +11,8 @@ export default defineConfig({
         "./LoginButton": "./src/components/LoginButton"
       },
       shared: ["react", "react-dom"]
-    })
+    }),
+    [svgr()],
   ],
   build: {
     target: 'esnext',
