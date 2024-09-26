@@ -1,6 +1,6 @@
 import React from "react";
 import GenericButton from "./GenericButton";
-import Input from "./Input"; 
+import Input from "./Input";
 
 const Time = () => {
   const therapyModes = ["Low-Fill", "High-Fill"];
@@ -53,7 +53,6 @@ const Time = () => {
           />
         </div>
 
-        {/* Footer with Buttons */}
         <div className="flex justify-end mt-4">
           <GenericButton
             text="Next"
@@ -63,15 +62,12 @@ const Time = () => {
         </div>
       </div>
 
-      {/* Cancel and Next with Divider */}
       <div className="flex justify-between items-center mt-4">
         <GenericButton
           text="Cancel"
           className="bg-gray-300 text-black focus:ring-2 focus:ring-black"
           style={{ width: "100px" }}
         />
-
-       
       </div>
     </>
   );
