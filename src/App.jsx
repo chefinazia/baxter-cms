@@ -1,9 +1,9 @@
 import React from "react";
-import LoginButton from "./components/LoginButton";
 import CalendarPatientsList from "./components/CalendarPatientsList";
 import FilterPatients from "./components/FilterPatients";
 import GenericButton from "./components/GenericButton";
 import SearchIcon from "@mui/icons-material/Search";
+import DeviceProgram from "./components/DeviceProgram";
 
 const App = () => {
   return (
@@ -18,12 +18,15 @@ const App = () => {
         <GenericButton
           icon={<SearchIcon />}
           text="Patient Search"
-          className="bg-white text-blue-500 border-blue-500 mb-2"
+          className="bg-white text-blue-500 border-blue-500 mb-1"
         />
-        <FilterPatients />
-      </div>
-      <div className="col-span-2">
-        <CalendarPatientsList />
+        <div className="mb-2">
+          <FilterPatients />
+        </div>
+        <div className="mb-2">
+          <CalendarPatientsList />
+        </div>
+        <DeviceProgram />
       </div>
     </div>
   );

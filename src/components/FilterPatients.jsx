@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from "./DropDownInput";
+import Input from "./Input";
 import GenericButton from "./GenericButton";
 
 const FilterPatients = () => {
@@ -14,16 +14,16 @@ const FilterPatients = () => {
         <div className="text-white text-lg font-normal">Filter Patients</div>
       </div>
       <div className="flex flex-row space-x-6 mb-4 ml-4">
-        <Dropdown label="Attending Physician" options={physicians} />
-        <Dropdown label="Treatment Progress" options={progressOptions} />
-        <Dropdown label="Filter By Date" options={dateOptions} />
+        <Input label="Attending Physician" options={physicians} />
+        <Input label="Treatment Progress" options={progressOptions} />
+        <Input label="Filter By Date" options={dateOptions} />
         <GenericButton
           text="Filter"
           className="bg-gray-300 text-black mt-8 h-10 focus:ring-2 focus:ring-black font-semibold w-48"
         />
       </div>
       <div className="flex flex-row mb-4 ml-4">
-        <Dropdown label="Modality/Device" options={modalityOptions} />
+        <Input label="Modality/Device" options={modalityOptions} />
       </div>
     </div>
   );
