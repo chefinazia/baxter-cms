@@ -8,8 +8,8 @@ const CalendarTablePatientsList = ({ leftDate }) => {
   }
   return (
     <div className="container">
-      <table className="text-left w-full border">
-        <thead className="flex text-zinc-700 w-full">
+      <table className="text-left w-full border bg-primary-primaryTabColor">
+        <thead className="flex text-primary-textColor w-full">
           <tr className="flex w-full mb-4">
             {dateArr.map((date, index) => {
               return (

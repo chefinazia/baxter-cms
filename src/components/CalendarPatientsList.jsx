@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { addDays, subDays } from "date-fns";
 import CalendarTablePatientsList from "./CalendarTablePatientList";
+import CaretLeft from "../svg/caret-left.svg?react";
+import CaretRight from "../svg/caret-right.svg?react";
 const CalendarPatientsList = () => {
   const [ourDate, setOurDate] = useState(new Date().toLocaleDateString());
 
@@ -12,45 +14,28 @@ const CalendarPatientsList = () => {
   };
 
   return (
-    <div className="grid">
-      <div className="col-span-2 flex">
+    <div className="grid grid-rows-2 gap-4 grid-flow-col">
         <div
-          className="flex flex-initial align-middle justify-center none border w-auto border-zinc-800 center rounded-lg font-serif text-md text-center uppercase text-zinc-700 py-3"
-          data-ripple-dark="true"
+          className="grid grid-cols-4 gap-4 grid-flow-dense items-center justify-start w-[600px] h-[100px] m-auto text-nowrap  bg-primary-secondaryTabColor border border-primary-secondaryTabColorBorderColor rounded-md font-serif text-sm uppercase text-primary-textColor"
         >
-          <div className="flex-initial">
-            <a onClick={() => handleSubtractDate()}>
-              <svg
-                className="w-6 h-6 mr-2"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M14 17l-6-5 6-5v10z" fill="#0D0D0D" />
-              </svg>
-            </a>
+          <div className="w-8 h-8 ml-2">
+            <div onClick={() => handleSubtractDate()}>
+              <CaretLeft/>
+            </div>
           </div>
-          <div className="flex-auto">
-            <h1>
+          <div>
+            <h1 className="text-primary-textColor">
               {subDays(ourDate, 4).toDateString()} -{" "}
               {addDays(ourDate, 2).toDateString()}
             </h1>
           </div>
-          <div className="flex-initial">
-            <a onClick={() => handleAddDate()}>
-              <svg
-                className="w-6 h-6 ml-2"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M10 7l6 5-6 5V7z" fill="#0D0D0D" />
-              </svg>
-            </a>
+          <div className="w-8 h-8 absolute right-96">
+            <div onClick={() => handleAddDate()}>
+              <CaretRight/>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-initial row-span-2 pt-8 justify-center w-full pr-14">
+      <div className="divide-x-8 pt-8 justify-center w-full">
         <CalendarTablePatientsList leftDate={subDays(ourDate, 4)} />
       </div>
     </div>
