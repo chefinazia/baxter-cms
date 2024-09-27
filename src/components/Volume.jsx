@@ -1,9 +1,9 @@
 import React from "react";
+import DropDownInput from "./DropDownInput";
+import { THERAPY_MODES } from "../constants/mockData";
 import Input from "./Input";
 
 const Volume = () => {
-  const therapyModes = ["Low-Fill", "High-Fill"];
-  const smartDwells = ["Adjust Dwells Up and Down", "Adjust Dwells Up Only"];
 
   return (
     <div className="p-4 bg-white -ml-4 -mr-4">
@@ -11,15 +11,15 @@ const Volume = () => {
       <div className="mb-4">
         <Input
           label="Volume Program Name"
-          isInput={true}
+          type="text"
           placeholder="Enter volume"
         />
       </div>
 
       <div className="mb-4">
-        <Input
+        <DropDownInput
           label="Volume Mode"
-          options={therapyModes}
+          options={THERAPY_MODES}
           defaultValue="Low-Fill"
         />
       </div>

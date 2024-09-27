@@ -16,7 +16,7 @@ const App = () => {
       </div>
       <div>
       <GenericButton
-          icon={<Search/>}
+          icon={<Search />}
           text="Patient Search"
           className="bg-white text-blue-500 border-blue-500 mb-1"
         />

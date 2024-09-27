@@ -3,6 +3,7 @@ import Time from "./Time";
 import Volume from "./Volume";
 import Tidal from "./Tidal";
 import Settings from "./Settings";
+import { DEVICE_PROGRAM_TAPS } from "../constants/mockData";
 
 const DeviceProgram = () => {
   const [activeComponent, setActiveComponent] = useState("Time");
@@ -25,7 +26,7 @@ const DeviceProgram = () => {
   return (
     <div className="p-4">
       <div className="flex space-x-2 mb-0 border border-gray">
-        {["Time", "Volume", "Tidal", "Settings"].map((item) => (
+        {DEVICE_PROGRAM_TAPS.map((item) => (
           <div
             key={item}
             className="border border-gray p-2 mt-4 ml-4 border-b-transparent rounded"

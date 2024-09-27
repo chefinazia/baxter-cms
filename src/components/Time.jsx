@@ -1,11 +1,10 @@
 import React from "react";
 import GenericButton from "./GenericButton";
+import DropDownInput from "./DropDownInput";
+import { THERAPY_MODES, SMART_DWELLS } from "../constants/mockData";
 import Input from "./Input";
 
-const Time = () => {
-  const therapyModes = ["Low-Fill", "High-Fill"];
-  const smartDwells = ["Adjust Dwells Up and Down", "Adjust Dwells Up Only"];
-
+const Time = ({ minRange = "0:10", maxRange = "48:00", increment = "0:10" }) => {
   return (
     <>
       <div className="border-b-2 p-4 bg-white -ml-4 -mr-4">
@@ -13,15 +12,15 @@ const Time = () => {
         <div className="mb-4">
           <Input
             label="Device Program Name"
-            isInput={true}
+            type="text"
             placeholder="Enter name"
           />
         </div>
 
         <div className="mb-4">
-          <Input
+          <DropDownInput
             label="Therapy Mode"
-            options={therapyModes}
+            options={THERAPY_MODES}
             defaultValue="Low-Fill"
           />
         </div>
@@ -30,25 +29,25 @@ const Time = () => {
           <div className="flex items-center mr-4">
             <Input
               label="Night Therapy Time"
-              isInput={true}
+              type="text"
               placeholder="Hours"
             />
             <span className="text-black ml-2 h-0">Hours</span>
           </div>
           <div className="flex items-center mt-5">
-            <Input isInput={true} placeholder="Minutes" />
+            <Input type="text" placeholder="Minutes" />
             <span className="text-black ml-2">Minutes</span>
           </div>
         </div>
 
         <p className="text-blue-500 mb-4">
-          Range: 0:10 - 48:00, in increments of 0:10
+          Range: {minRange} - {maxRange}, in increments of {minRange}
         </p>
 
         <div className="mb-4">
-          <Input
+          <DropDownInput
             label="Smart Dwells"
-            options={smartDwells}
+            options={SMART_DWELLS}
             defaultValue="Adjust Dwells Up and Down"
           />
         </div>
@@ -56,8 +55,7 @@ const Time = () => {
         <div className="flex justify-end mt-4">
           <GenericButton
             text="Next"
-            className="bg-gray-300 text-black focus:ring-2 focus:ring-black"
-            style={{ width: "100px" }}
+            className="bg-gray-300 text-black focus:ring-2 focus:ring-black w-[100px]"
           />
         </div>
       </div>
@@ -65,8 +63,7 @@ const Time = () => {
       <div className="flex justify-between items-center mt-4">
         <GenericButton
           text="Cancel"
-          className="bg-gray-300 text-black focus:ring-2 focus:ring-black"
-          style={{ width: "100px" }}
+          className="bg-gray-300 text-black focus:ring-2 focus:ring-black w-[100px]"
         />
       </div>
     </>
