@@ -4,6 +4,12 @@ import { THERAPY_MODES } from "../constants/mockData";
 import Input from "./Input";
 
 const Volume = () => {
+  const handlePaste = (e) => {
+    const pastedData = e.clipboardData.getData("Text");
+    if (!/^[a-zA-Z0-9]*$/.test(pastedData)) {
+      e.preventDefault();
+    }
+  };
 
   return (
     <div className="p-4 bg-white -ml-4 -mr-4">
@@ -13,6 +19,10 @@ const Volume = () => {
           label="Volume Program Name"
           type="text"
           placeholder="Enter volume"
+          disabled={false}
+          pattern="[A-Za-z]+"
+          maxLength={3}
+          onPaste = {handlePaste}
         />
       </div>
 

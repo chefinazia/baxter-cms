@@ -21,8 +21,7 @@ const GenericButton = ({
         rounded-md 
         text-black bg-gray 
         focus:outline-none 
-        focus:ring-2 
-        focus:ring-blue-400 ${className}`}
+        focus:ring-2  ${className}`}
       style={style}
     >
       {icon && <span className="mr-2">{icon}</span>}

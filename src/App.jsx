@@ -4,6 +4,7 @@ import FilterPatients from "./components/FilterPatients";
 import GenericButton from "./components/GenericButton";
 import DeviceProgram from "./components/DeviceProgram";
 import Search from "./svg/search.svg?react";
+import SearchCriteria from "./components/SearchCriteria";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         </div>
         <CalendarPatientsList />
         <DeviceProgram />
+        <SearchCriteria />
       </div>
     </div>
   );

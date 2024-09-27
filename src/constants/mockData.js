@@ -5,3 +5,4 @@ export const PHYSICIANS = ["All", "Senior Dr.", "Junior Dr.", "Staff Dr."];
 export const PROGRESS_OPTIONS = ["All", "In Progress", "Completed", "Pending"];
 export const DATE_OPTIONS = ["All", "Last 7 Days", "Last 15 Days", "This Month"];
 export const MODALITY_OPTIONS = ["All", "MRI", "CT Scan", "X-Ray"];
+export const PATIENT_STATUS = ["Active", "InActive"];
