@@ -61,14 +61,14 @@ export const data = [
   {
     name: "001, Patient Name",
     age: "07 December 1897",
-    address: [{ aaaaa: "aaa" }, { aaaaa: "aaa" }],
+    address: "assassoffji af faiojf i",
     pId: "O-BXEUS-1145",
     phy: "Ms Benty Physician 1",
   },
   {
     name: "002, Clipat",
     age: "09 January 1993",
-    address: [{ aaaaa: "aaa" }, { aaaaa: "aaa" }],
+    address: "jfallfaafa afjaa j af",
     pId: "O-BXEUS-1124",
     phy: "Ms Benty Physician 1",
   },

@@ -2,9 +2,9 @@ import React from "react";
 import { addDays, getDate, formatDate } from "date-fns";
 import getDayOfWeek from "../../utils/date-fns.js";
 const CalendarTablePatientsList = (leftDate) => {
-  let dateArr = [leftDate];
+  let dateArr = [leftDate.leftDate];
   for (let i = 1; i <= 6; i++) {
-    dateArr.push(addDays(leftDate, i));
+    dateArr.push(addDays(leftDate.leftDate, i));
   }
   return (
     <div className="container">
@@ -14,6 +14,7 @@ const CalendarTablePatientsList = (leftDate) => {
             {dateArr.map((date, index) => {
               return (
                 <th key={index} className="p-4 w-1/4 border-separate">
+                  
                   {getDayOfWeek(formatDate(date, "dd/MM/yyyy").toString())}
                   {getDate(date)}
                 </th>
