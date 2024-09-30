@@ -12,7 +12,7 @@ const App = () => {
       <div>
         <CalendarPatientsList />
       </div>
-      <TableClinical columns={columns} data={data}/>
+      <TableClinical columns={columns} data={data} />
     </div>
   );
 };

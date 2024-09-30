@@ -22,7 +22,7 @@ export const columns = [
     dataIndex: "address",
     key: "address",
     width: 300,
-    align: "center"
+    align: "center",
   },
   {
     title: "Baxter Patient ID",
