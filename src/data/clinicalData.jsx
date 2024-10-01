@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import CameraSvgComp from "../svg/camera.svg?react";
 import FilterComp from "../svg/filter.svg?react";
+import PlusIcon from "../svg/plus-icon.svg?react";
 export const columns = [
   {
     title: "Patient Name",
@@ -9,6 +10,18 @@ export const columns = [
     key: "name",
     width: 300,
     align: "center",
+    render: (e) => (
+      <div className="grid grid-flow-col">
+        <div>
+          {
+            <div>
+              <h1 key={e[0].patientName}>{e[0].patientName}</h1>
+            </div>
+          }
+        </div>
+        <PlusIcon className=""></PlusIcon>
+      </div>
+    ),
   },
   {
     title: "Date of Birth",
@@ -59,14 +72,14 @@ export const columns = [
 
 export const data = [
   {
-    name: "001, Patient Name",
+    name: [{ patientName: "001, Patient Name" }],
     age: "07 December 1897",
     address: "assassoffji af faiojf i",
     pId: "O-BXEUS-1145",
     phy: "Ms Benty Physician 1",
   },
   {
-    name: "002, Clipat",
+    name: [{ patientName: "002, Clipat" }],
     age: "09 January 1993",
     address: "jfallfaafa afjaa j af",
     pId: "O-BXEUS-1124",

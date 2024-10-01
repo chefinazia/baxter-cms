@@ -2,7 +2,7 @@ import Table from "rc-table";
 import React from "react";
 
 const TableClinical = (props) => {
-  const {columns, data} = props
+  const { columns, data } = props;
   return (
     <Table
       columns={columns}
