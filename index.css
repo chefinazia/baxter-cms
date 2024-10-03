@@ -4,13 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-primary-pageColor
+    @apply bg-primary-pageColor;
   }
 }
 
-
 @layer components {
   .btn {
-    @apply  bg-green-700  py-3 px-6 font-serif text-sm
+    @apply bg-green-700  py-3 px-6 font-serif text-sm;
   }
 }
