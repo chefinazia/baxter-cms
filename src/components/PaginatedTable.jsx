@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import TableComponent from './TableComponent';
-import Pagination from './Pagination'; 
+import React, { useState } from "react";
+import TableComponent from "./TableComponent";
+import Pagination from "./Pagination";
 
 const PaginatedTable = () => {
   const pageSize = 4;
@@ -8,24 +8,28 @@ const PaginatedTable = () => {
 
   const columns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: "Age",
+      dataIndex: "age",
+      key: "age",
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
     },
     {
-      title: 'Operations',
-      key: 'operations',
-      render: () => <a href="#" className="text-red-500 hover:underline">Delete</a>,
+      title: "Operations",
+      key: "operations",
+      render: () => (
+        <a href="#" className="text-red-500 hover:underline">
+          Delete
+        </a>
+      ),
     },
   ];
 

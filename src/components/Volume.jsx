@@ -22,7 +22,7 @@ const Volume = () => {
           disabled={false}
           pattern="[A-Za-z]+"
           maxLength={3}
-          onPaste = {handlePaste}
+          onPaste={handlePaste}
         />
       </div>
 

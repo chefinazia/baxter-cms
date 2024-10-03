@@ -40,10 +40,7 @@ const DeviceProgram = () => {
           </div>
         ))}
       </div>
-      <div className="border border-gray p-4 mt-0">
-        {renderComponent()}
-        
-      </div>
+      <div className="border border-gray p-4 mt-0">{renderComponent()}</div>
     </div>
   );
 };

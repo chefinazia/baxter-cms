@@ -4,7 +4,11 @@ import DropDownInput from "./DropDownInput";
 import { THERAPY_MODES, SMART_DWELLS } from "../constants/mockData";
 import Input from "./Input";
 
-const Time = ({ minRange = "0:10", maxRange = "48:00", increment = "0:10" }) => {
+const Time = ({
+  minRange = "0:10",
+  maxRange = "48:00",
+  increment = "0:10",
+}) => {
   return (
     <>
       <div className="border-b-2 p-4 bg-white -ml-4 -mr-4">
@@ -27,11 +31,7 @@ const Time = ({ minRange = "0:10", maxRange = "48:00", increment = "0:10" }) => 
 
         <div className="mb-4 flex items-center">
           <div className="flex items-center mr-4">
-            <Input
-              label="Night Therapy Time"
-              type="text"
-              placeholder="Hours"
-            />
+            <Input label="Night Therapy Time" type="text" placeholder="Hours" />
             <span className="text-black ml-2 h-0">Hours</span>
           </div>
           <div className="flex items-center mt-5">
@@ -41,7 +41,7 @@ const Time = ({ minRange = "0:10", maxRange = "48:00", increment = "0:10" }) => 
         </div>
 
         <p className="text-blue-500 mb-4">
-          Range: {minRange} - {maxRange}, in increments of {minRange}
+          Range: {minRange} - {maxRange}, in increments of {increment}
         </p>
 
         <div className="mb-4">

@@ -8,6 +8,8 @@ import SearchCriteria from "./components/SearchCriteria";
 import ClinicalActions from "./components/ClinicalActions";
 import PaginatedTable from "./components/PaginatedTable";
 
+import TableClinical from "./components/TableClinical";
+import { columns, data } from "./data/clinicalData";
 const App = () => {
   return (
     <div className="divide-y-4">
@@ -42,6 +44,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      <TableClinical columns={columns} data={data} />
     </div>
   );
 };

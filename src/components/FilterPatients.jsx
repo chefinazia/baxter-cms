@@ -1,10 +1,14 @@
 import React from "react";
 import DropDownInput from "./DropDownInput";
 import GenericButton from "./GenericButton";
-import { DATE_OPTIONS, MODALITY_OPTIONS, PHYSICIANS, PROGRESS_OPTIONS } from "../constants/mockData";
+import {
+  DATE_OPTIONS,
+  MODALITY_OPTIONS,
+  PHYSICIANS,
+  PROGRESS_OPTIONS,
+} from "../constants/mockData";
 
 const FilterPatients = () => {
-
   return (
     <div className="border border-black">
       <div className="bg-blue-500 py-2 px-4 mb-4">

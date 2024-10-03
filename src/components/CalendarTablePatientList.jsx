@@ -1,10 +1,10 @@
 import React from "react";
-import { addDays, getDay, getDate, formatDate } from "date-fns";
+import { addDays, getDate, formatDate } from "date-fns";
 import getDayOfWeek from "../../utils/date-fns.js";
-const CalendarTablePatientsList = ({ leftDate }) => {
-  let dateArr = [leftDate];
+const CalendarTablePatientsList = (leftDate) => {
+  let dateArr = [leftDate.leftDate];
   for (let i = 1; i <= 6; i++) {
-    dateArr.push(addDays(leftDate, i));
+    dateArr.push(addDays(leftDate.leftDate, i));
   }
   return (
     <div className="container">
