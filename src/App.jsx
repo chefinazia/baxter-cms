@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CalendarPatientsList from "./components/CalendarPatientsList";
 import FilterPatients from "./components/FilterPatients";
 import GenericButton from "./components/GenericButton";
@@ -10,10 +10,10 @@ import PaginatedTable from "./components/PaginatedTable";
 
 import TableClinical from "./components/TableClinical";
 import { columns, data } from "./data/clinicalData";
-import AtomPagination from "./components/AtomPagination";
 import CalendarComponent from "./components/Calender";
-
 const App = () => {
+  const [date, setDate] = useState(new Date());
+  const [selectRange, setSelectRange] = useState(false);
   return (
     <div className="divide-y-6">
       <div>
@@ -49,7 +49,7 @@ const App = () => {
       </div>
       <TableClinical columns={columns} data={data} />
       <div className="">
-        <CalendarComponent />
+        <CalendarComponent date={date} selectRange={selectRange} setDate={setDate} setSelectRange={setSelectRange}/>
       </div>
     </div>
   );

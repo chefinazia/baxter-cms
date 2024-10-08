@@ -9,7 +9,42 @@
 }
 
 @layer components {
+  .calendar {
+    @apply border-l-neutral-950
+  }
   .btn {
     @apply bg-green-700  py-3 px-6 font-serif text-sm;
+  }
+  .button {
+    @apply !text-primary-textColor !bg-primary-pageColor h-10 w-2 
+  }
+  .button:disabled {
+    @apply !bg-primary-blurColor !text-transparent
+  }
+  .button:enabled:hover,
+  .button:enabled:focus {
+    @apply !bg-primary-secondaryTabColorBorderColor !border-l-zinc-950
+  }
+  .react-calendar {
+    @apply  w-fit !border-l-zinc-950
+  }
+  .react-calendar__navigation__arrow {
+    @apply hidden
+  }
+  .react-calendar__month-view {
+    @apply grid grid-flow-col gap-0
+  }
+  .react-calendar__month-view__days__day--neighboringMonth {
+    @apply bg-primary-blurColor
+  }
+  .react-calendar__month-view__weekNumbers .react-calendar__tile {
+    @apply flex align-middle justify-center font-bold
+  }
+  .react-calendar__month-view__weekdays {
+    @apply align-middle font-bold border-primary-textColor !no-underline text-primary-primaryTabColor text-lg
+  }
+  .react-calendar__navigation {
+    @apply flex justify-start text-xl align-top !border-l-zinc-950 text-primary-secondaryTabColor bg-primary-primaryTabColor font-bold
+
   }
 }
