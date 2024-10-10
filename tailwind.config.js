@@ -13,6 +13,8 @@ module.exports = {
           textColor: "#2d3435",
           primaryBgColor: "#feffff",
           carotRightColor: "#9fa6a6",
+          blurColor: '#757575',
+          buttonColor: '#6f48eb',
         },
       },
     },
