@@ -10,7 +10,7 @@ import PaginatedTable from "./components/PaginatedTable";
 
 import TableClinical from "./components/TableClinical";
 import { columns, data } from "./data/clinicalData";
-import CalendarComponent from "./components/Calender";
+import CalendarComponent from "./components/CalendarComponent";
 const App = () => {
   const [date, setDate] = useState(new Date());
   const [selectRange, setSelectRange] = useState(false);
@@ -48,8 +48,8 @@ const App = () => {
         </div>
       </div>
       <TableClinical columns={columns} data={data} />
-      <div className="">
-        <CalendarComponent date={date} selectRange={selectRange} setDate={setDate} setSelectRange={setSelectRange}/>
+      <div className="border w-fit border-l-neutral-950">
+        <CalendarComponent />
       </div>
     </div>
   );
