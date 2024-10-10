@@ -7,9 +7,6 @@ export default defineConfig({
     federation({
       name: "remotes",
       filename: "cmsEntry.js",
-      exposes: {
-        "./LoginButton": "./src/components/LoginButton",
-      },
       shared: ["react", "react-dom"],
     }),
     [svgr()],
