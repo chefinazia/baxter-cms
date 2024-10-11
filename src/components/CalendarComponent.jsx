@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import FlagSVG from "../svg/flag.svg?react";
+import RedFlagSVG from "../svg/redFlag.svg?react";
+import GreenFlagSVG from "../svg/greenFlag.svg?react";
 import CurrentDateSVG from "../svg/currentDate.svg?react";
+import { CALENDAR_DATA } from "../constants/mockData";
 
 const CalendarComponent = () => {
   const [date, setDate] = useState(new Date());
@@ -33,20 +36,48 @@ const CalendarComponent = () => {
       ? "react-calendar__tile react-calendar__tile--current react-calendar__navigation react-calendar__month-view__weekdays react-calendar__month-view__days__day--neighboringMonth react-calendar__month-view__weekNumbers react-calendar__navigation__arrow react-calendar__month-view__weekdays__weekday text-gray-500 text-left"
       : "react-calendar__tile react-calendar__navigation react-calendar__month-view__weekdays react-calendar__month-view__days__day--neighboringMonth react-calendar__month-view__weekNumbers react-calendar__navigation__arrow react-calendar__month-view__weekdays__weekday text-gray-500 text-left";
   };
-  
+
   const tileContent = ({ date }) => {
     const dateString = date.toDateString();
     const today = new Date().toDateString();
 
-    return (
-      <div className = "flex items-center justify-center">
-        {dateString === today ? (
+    const checkup = CALENDAR_DATA.find(
+      (item) => new Date(item.checkupDate).toDateString() === dateString,
+    );
+
+    if (dateString === today) {
+      return (
+        <div className="flex items-center justify-center">
           <CurrentDateSVG />
-        ) : events[dateString] ? (
-          <FlagSVG />
-        ) : (
-          <span>--</span>
-        )}
+        </div>
+      );
+    }
+
+    if (checkup) {
+      if (checkup.attended) {
+        return (
+          <div className="flex items-center justify-center">
+            <GreenFlagSVG />
+          </div>
+        );
+      } else if (!checkup.attended && date > new Date()) {
+        return (
+          <div className="flex items-center justify-center">
+            <FlagSVG />
+          </div>
+        );
+      } else if (!checkup.attended) {
+        return (
+          <div className="flex items-center justify-center">
+            <RedFlagSVG />
+          </div>
+        );
+      }
+    }
+
+    return (
+      <div className="flex items-center justify-center">
+        <span>--</span>
       </div>
     );
   };

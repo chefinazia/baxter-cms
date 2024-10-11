@@ -14,3 +14,20 @@ export const DATE_OPTIONS = [
 ];
 export const MODALITY_OPTIONS = ["All", "MRI", "CT Scan", "X-Ray"];
 export const PATIENT_STATUS = ["Active", "InActive"];
+export const CALENDAR_DATA = [
+  {
+    id: "1",
+    attended: false,
+    checkupDate: "Tue Oct 01 2024",
+  },
+  {
+    id: "2",
+    attended: false,
+    checkupDate: "Tue Oct 13 2024",
+  },
+  {
+    id: "3",
+    attended: true,
+    checkupDate: "Tue Oct 04 2024",
+  },
+];
