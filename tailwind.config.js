@@ -15,6 +15,8 @@ module.exports = {
           carotRightColor: "#9fa6a6",
           navBarBgColor:"#295DA7",
           navBarItemBgColor:"#617598",
+          blurColor: '#757575',
+          buttonColor: '#6f48eb',
         },
       },
     },

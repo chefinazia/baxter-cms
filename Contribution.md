@@ -10,9 +10,9 @@
 
 1. components/: This directory hosts all the React components.
 
-    - atoms/: This directory hosts all the dumb React components. They receive props from React components and render themselves accordingly. These components should have no direct association to Redux.
+   - atoms/: This directory hosts all the dumb React components. They receive props from React components and render themselves accordingly. These components should have no direct association to Redux.
 
-    - features/: Components which accomplish a particular feature/module.
+   - features/: Components which accomplish a particular feature/module.
 
 2. pages/: This will have all the pages which will be developed in the application.
 
@@ -31,7 +31,8 @@
 9. app/: Application layer root files. This folder will contain: app.tsx, global.css, routes.
 
 Every component/file should be wrapped up in the folder of that particular component:
-``` 
+
+```
 ├── components
           ├── Button
                 ├── button.jsx
@@ -48,89 +49,90 @@ Every component/file should be wrapped up in the folder of that particular compo
 
 4. Avoid BEM. Prefer locally-scoped css for each component.
 
-
 ### D. Best Practices
 
 1. Naming convention
-    - All folder names should follow small case.
-    - Component names should follow Pascal Case.
-    - Variable/Functions name should follow camelCase
+
+   - All folder names should follow small case.
+   - Component names should follow Pascal Case.
+   - Variable/Functions name should follow camelCase
 
 1. Clean Code
 
-    - Avoid unnecessary `div` in the HTML.
+   - Avoid unnecessary `div` in the HTML.
 
-    - Avoid inline styling.
-    
-    - Place code as close to where it's relevant as possible. Variables and functions should be declared close to their usage (if mentioned in same file).
+   - Avoid inline styling.
+   - Place code as close to where it's relevant as possible. Variables and functions should be declared close to their usage (if mentioned in same file).
 
-    - Comments can be extremely helpful,but too much comments can create noise. Stale comments should be deleted as they can be misleading.
+   - Comments can be extremely helpful,but too much comments can create noise. Stale comments should be deleted as they can be misleading.
 
-    - Keep functions small and easier to understand.
+   - Keep functions small and easier to understand.
 
-    - Limit the number of arguments pass to any function. If required, pass it as object argument with object destructuring syntax.
+   - Limit the number of arguments pass to any function. If required, pass it as object argument with object destructuring syntax.
 
-    - Avoid flag based logic in a single function. Example:
-        ❌
-        ```js
-            const makeBooking = (customer, isPremium) => {
-            if (isPremium) {
-                // logic for premium booking
-            } else {
-                // logic for regular booking
-            }
-            };
-        ```
+   - Avoid flag based logic in a single function. Example:
+     ❌
 
-        ✅
+     ```js
+     const makeBooking = (customer, isPremium) => {
+       if (isPremium) {
+         // logic for premium booking
+       } else {
+         // logic for regular booking
+       }
+     };
+     ```
 
-        ```js
-            const makeRegularBooking = customer => {
-            // logic for regular booking
-            };
+     ✅
 
-            const makePremiumBooking = customer => {
-            // logic for premium booking
-            };
-        ```
-    - Use verb while naming any function. Maintain consistency on it:
-        ❌
+     ```js
+     const makeRegularBooking = (customer) => {
+       // logic for regular booking
+     };
 
-        ```js
-            getArticles();
-            fetchUsers();
-            retrievePages();
-        ```
+     const makePremiumBooking = (customer) => {
+       // logic for premium booking
+     };
+     ```
 
-        ✅
+   - Use verb while naming any function. Maintain consistency on it:
+     ❌
 
-        ```js
-            getArticles();
-            getUsers();
-            getPages();
-        ```
-    - Avoid passing closures to an event.
-        ❌
+     ```js
+     getArticles();
+     fetchUsers();
+     retrievePages();
+     ```
 
-        ```js
-            <input
-                type="text"
-                value={model.name}
-                onChange={(e) => { model.name = e.target.value }}
-            />
-        ```
-        ✅
+     ✅
 
-        ```js
-            <input
-                type="text"
-                value={model.name}
-                onChange={this.handleChange}
-            />
-        ```
-    - Avoid multiline conditional rendering in JSX. Extract that logic into sub components
-    - When several components reflect the same changing data lift shared state up to a common ancestor
+     ```js
+     getArticles();
+     getUsers();
+     getPages();
+     ```
 
+   - Avoid passing closures to an event.
+     ❌
+
+     ```js
+     <input
+       type="text"
+       value={model.name}
+       onChange={(e) => {
+         model.name = e.target.value;
+       }}
+     />
+     ```
+
+     ✅
+
+     ```js
+     <input type="text" value={model.name} onChange={this.handleChange} />
+     ```
+
+   - Avoid multiline conditional rendering in JSX. Extract that logic into sub components
+   - When several components reflect the same changing data lift shared state up to a common ancestor
 
 ### E. Pull Requests
 
@@ -141,7 +143,6 @@ Every component/file should be wrapped up in the folder of that particular compo
 ### F. Assets
 
 1. Store all assets like images and videos in `/src/assets`.
-
 
 ### G. Development
 
